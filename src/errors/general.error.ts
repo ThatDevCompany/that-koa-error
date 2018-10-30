@@ -1,4 +1,4 @@
-import { ApplicationError } from './ApplicationError'
+import { ApplicationError } from './application.error'
 
 /**
  * A General Error

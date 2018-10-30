@@ -2,7 +2,6 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"target": "es6",
-		"outDir": "dist",
 		"module": "commonjs",
 		"sourceMap": false,
 		"noImplicitAny": false,
@@ -14,7 +13,8 @@
 			"@/*": ["./src/*"]
 		},
 		"types": [
-			"jasmine"
+			"jasmine",
+			"node"
 		],
 		"typeRoots": [
 			"node_modules/@types"
@@ -28,7 +28,6 @@
 		"src"
 	],
 	"exclude": [
-		"node_modules",
-		"**/*.spec.ts"
+		"node_modules"
 	]
 }

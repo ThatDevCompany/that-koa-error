@@ -1,7 +1,7 @@
 {
     "name": "that-koa-error",
     "description": "A lightweight and extendable Error Handler library for Koa Applications",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -16,10 +16,10 @@
         "test": "node admin/scripts/test.js",
         "publish": "node admin/scripts/publish.js"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/jasmine": "^2.8.9",
+        "@types/node": "^10.12.1",
         "jasmine-core": "^3.3.0",
         "jasmine-spec-reporter": "^4.2.1",
         "nyc": "^13.1.0",

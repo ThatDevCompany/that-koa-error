@@ -19,9 +19,9 @@ export function error() {
 				}
 				console.warn('APPLICATION ERROR', err)
 			} else {
-			/**
-			 * An Unexpected Error
-			 */
+				/**
+				 * An Unexpected Error
+				 */
 				ctx.status = 500
 				ctx.body = {
 					status: 500,
