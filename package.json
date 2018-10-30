@@ -1,0 +1,31 @@
+{
+    "name": "that-koa-error",
+    "description": "A lightweight and extendable Error Handler library for Koa Applications",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ThatDevCompany/that-koa-error.git"
+    },
+    "contributors": [
+        "Stephen James <steve@thatdevcompany.com> (http://thatdevcompany.com)"
+    ],
+    "scripts": {
+        "lint": "node admin/scripts/lint.js",
+        "build": "node admin/scripts/build.js",
+        "test": "node admin/scripts/test.js",
+        "publish": "node admin/scripts/publish.js"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "@types/jasmine": "^2.8.9",
+        "jasmine-core": "^3.3.0",
+        "jasmine-spec-reporter": "^4.2.1",
+        "nyc": "^13.1.0",
+        "that-build-library": "^0.1.36",
+        "ts-node": "^7.0.1",
+        "tsconfig-paths": "^3.6.0",
+        "typescript": "^3.1.4"
+    }
+}
