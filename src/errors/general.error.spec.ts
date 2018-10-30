@@ -1,5 +1,5 @@
 import { GeneralError } from './general.error'
-import {ApplicationError} from "@/errors/application.error";
+import { ApplicationError } from '@/errors/application.error'
 
 /**
  * Tests for GeneralError

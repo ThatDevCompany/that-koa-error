@@ -1,11 +1,10 @@
 import { error } from './error.middleware'
-import {GeneralError} from "@/errors";
+import { GeneralError } from '@/errors'
 
 /**
  * Tests for Error Middleware
  */
 describe('Error Middleware', () => {
-
 	/**
 	 * General Tests
 	 */
@@ -55,5 +54,4 @@ describe('Error Middleware', () => {
 		expect(ctx.body.message).toBe('A General Error has occurred')
 		expect(spy.calls.count()).toBe(1)
 	})
-
 })

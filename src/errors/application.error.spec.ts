@@ -16,5 +16,4 @@ describe('ApplicationError', () => {
 		const err = new MyError()
 		expect(err).toBeDefined()
 	})
-
 })
