@@ -1,17 +1,44 @@
-# That Simple ObjectStore
+# That Koa Error
 
 ##  Overview
-An object persistance interface for That Simple Model
+A lightweight and extendable Error Handler library for Koa Applications
 
-### Examples of its use
-More detailed documentation to follow
+When any part of the application throws an Errors the error middleware
+will intercept it and gracefully respond to the user
+
+Any Error which extends the ApplicationError class will be handled such
+that responses are properly wrapped with status codes etc.
+
+All non-application errors are treated as 500 Internal Server Errrors
+
+All errors will be logged to the console
+
+### Attaching Middleware
+The below TYPESCRIPT provides an example of attaching the library to the
+Koa Application
 
 ```
-const objectStore = new SOMETHINGObjectStore()
-const myObject = new MyModel()
+import * as Koa from 'koa'
+import { error } from 'that-koa-error'
 
-objectStore.put(myObject)
-objectStore.get(MyModel, "primaryKey", "secondaryKey")
-objectStore.query(MyModel, {})
-objectStore.remove(myObject)
+const app = new Koa()
+
+app.use(error())
+```
+
+### Throwing Application Errors
+The below TYPESCRIPT provides an example of how to throw an Application
+Error.
+
+Please note: the ApplicationError class itself is abstract - so we can
+only throw an extension class. The basic extension is the GeneralError
+
+```
+some code...
+
+if (something bad happened) {
+    throw new GeneralError('A message to only display in console', arguments)
+}
+
+some more code...
 ```
