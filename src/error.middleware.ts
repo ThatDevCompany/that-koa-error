@@ -1,4 +1,4 @@
-import { ApplicationError } from './errors'
+import { ApplicationError } from '@/errors'
 
 /**
  * A middleware for handling application errors in a Koa application

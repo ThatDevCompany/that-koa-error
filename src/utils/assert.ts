@@ -1,4 +1,4 @@
-import { GeneralError } from './errors'
+import { GeneralError } from '@/errors'
 import * as assertJs from 'assert'
 
 /**

@@ -1,4 +1,3 @@
-export * from './error.middleware'
 export * from './errors'
-export * from './assert'
-export * from './expectAsyncToThrow'
+export * from './utils'
+export * from './error.middleware'
