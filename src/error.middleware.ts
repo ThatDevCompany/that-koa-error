@@ -17,7 +17,15 @@ export function error() {
 					status: err.status,
 					message: err.message
 				}
-				console.warn('APPLICATION ERROR', err)
+				console.warn('-----------------')
+				console.warn('APPLICATION ERROR')
+				console.warn('-----------------')
+				console.warn(err.status + ': ' + err.message)
+				if (err.debugMessage) console.warn(err.debugMessage)
+				if (err.debugInfo) console.warn(JSON.stringify(err.debugInfo, null, 4))
+				console.warn('-----------------')
+				console.warn(err)
+				console.warn('-----------------')
 			} else {
 				/**
 				 * An Unexpected Error
@@ -27,7 +35,13 @@ export function error() {
 					status: 500,
 					message: 'An unexpected technical error has occurred'
 				}
-				console.error('UNEXPECTED ERROR', err)
+				console.warn('-----------------')
+				console.warn('UNEXPECTED ERROR')
+				console.warn('-----------------')
+				console.warn(err.message)
+				console.warn('-----------------')
+				console.error(err)
+				console.warn('-----------------')
 			}
 		}
 	}
