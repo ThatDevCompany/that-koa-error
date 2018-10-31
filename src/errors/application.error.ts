@@ -9,5 +9,6 @@ export abstract class ApplicationError extends Error {
 		public debugInfo: any = {}
 	) {
 		super(message)
+		Object.setPrototypeOf(this, ApplicationError.prototype) //Needed to maintain Error stack
 	}
 }
