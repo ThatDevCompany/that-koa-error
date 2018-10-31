@@ -1,4 +1,6 @@
 import { ApplicationError } from '@/errors'
+import { logApplicationError } from '@/utils/logApplicationError'
+import { logUnexpectedError } from '@/utils/logUnexpectedError'
 
 /**
  * A middleware for handling application errors in a Koa application
@@ -17,15 +19,7 @@ export function error() {
 					status: err.status,
 					message: err.message
 				}
-				console.warn('-----------------')
-				console.warn('APPLICATION ERROR')
-				console.warn('-----------------')
-				console.warn(err.status + ': ' + err.message)
-				if (err.debugMessage) console.warn(err.debugMessage)
-				if (err.debugInfo) console.warn(JSON.stringify(err.debugInfo, null, 4))
-				console.warn('-----------------')
-				console.warn(err)
-				console.warn('-----------------')
+				logApplicationError(err)
 			} else {
 				/**
 				 * An Unexpected Error
@@ -35,13 +29,7 @@ export function error() {
 					status: 500,
 					message: 'An unexpected technical error has occurred'
 				}
-				console.warn('-----------------')
-				console.warn('UNEXPECTED ERROR')
-				console.warn('-----------------')
-				console.warn(err.message)
-				console.warn('-----------------')
-				console.error(err)
-				console.warn('-----------------')
+				logUnexpectedError(err)
 			}
 		}
 	}

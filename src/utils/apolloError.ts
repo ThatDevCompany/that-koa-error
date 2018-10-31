@@ -1,4 +1,6 @@
 import { ApplicationError } from '@/errors'
+import { logUnexpectedError } from '@/utils/logUnexpectedError'
+import { logApplicationError } from '@/utils/logApplicationError'
 
 /**
  * A middleware for handling application errors in a Koa application
@@ -6,10 +8,10 @@ import { ApplicationError } from '@/errors'
 export function apolloError() {
 	return err => {
 		if (err instanceof ApplicationError) {
-			console.warn('APPLICATION ERROR', err)
+			logApplicationError(err)
 			return new Error(err.message)
 		} else {
-			console.error('UNEXPECTED ERROR', err)
+			logUnexpectedError(err)
 			return new Error('Internal Server Error')
 		}
 	}
