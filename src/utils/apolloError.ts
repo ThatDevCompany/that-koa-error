@@ -1,4 +1,3 @@
-import { ApplicationError } from '@/errors'
 import { logUnexpectedError } from '@/utils/logUnexpectedError'
 import { logApplicationError } from '@/utils/logApplicationError'
 
@@ -7,12 +6,22 @@ import { logApplicationError } from '@/utils/logApplicationError'
  */
 export function apolloError() {
 	return err => {
-		if (err instanceof ApplicationError) {
+		// Is the error an Apollo Error wrapping an Application Error?
+		if (err.extensions.exception.status) {
+			err.status = err.extensions.exception.status
+			err.debugMessage = err.extensions.exception.debugMessage
 			logApplicationError(err)
-			return new Error(err.message)
+			return {
+				status: err.status,
+				message: err.message
+			}
+			// Otherwise it is an untrapped error
 		} else {
 			logUnexpectedError(err)
-			return new Error('Internal Server Error')
+			return {
+				status: 500,
+				message: err.message
+			}
 		}
 	}
 }
