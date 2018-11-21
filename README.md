@@ -42,3 +42,38 @@ if (something bad happened) {
 
 some more code...
 ```
+
+#### assert Application Errors
+A handy utility for quickly and cleanly throwing GeneralErrors via
+assertion
+
+```
+function myFunction(a: string, b: string) {
+    assert(a, 'A must be provided')
+    assert(
+        b.length === a.length,
+        'B must be the same length as A',
+        {a, b}  // Pass on useful debug info here
+    )
+}
+```
+
+#### expectAsyncToThrow
+A handy utility for testing
+
+```
+it('should throw an error in an async function', async() {
+    await expectAsyncToThrow(async () => {
+        throw new Error('Something happened')
+    })
+})
+// This will be PASS
+
+
+it('should throw an error in an async function', async() {
+    await expectAsyncToThrow(async () => {
+        return Promise.resolve()
+    })
+})
+// This will be FAIL
+```
