@@ -1,4 +1,5 @@
 # That Koa Error
+[![CircleCI](https://circleci.com/gh/ThatDevCompany/that-koa-error.svg?style=svg)](https://circleci.com/gh/ThatDevCompany/that-koa-error)
 
 ##  Overview
 A lightweight and extendable Error Handler library for Koa Applications
