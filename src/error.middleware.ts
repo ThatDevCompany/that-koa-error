@@ -13,7 +13,7 @@ export function error() {
 			/**
 			 * An Application Error
 			 */
-			if (err instanceof ApplicationError) {
+			if (err.status) {
 				ctx.status = err.status
 				ctx.body = {
 					status: err.status,

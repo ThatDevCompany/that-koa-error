@@ -20,7 +20,7 @@ describe('Error Middleware', () => {
 	})
 
 	it('should catch unhandled non application errors', async () => {
-		const spy = spyOn(console, 'error')
+		const spy = spyOn(console, 'log')
 		const middleware = error()
 		const ctx = {
 			body: null,
@@ -38,7 +38,7 @@ describe('Error Middleware', () => {
 	})
 
 	it('should catch application errors', async () => {
-		const spy = spyOn(console, 'warn')
+		const spy = spyOn(console, 'log')
 		const middleware = error()
 		const ctx = {
 			body: null,

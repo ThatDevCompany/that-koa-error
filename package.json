@@ -1,7 +1,7 @@
 {
     "name": "that-koa-error",
     "description": "A lightweight and extendable Error Handler library for Koa Applications",
-    "version": "0.0.27",
+    "version": "0.0.29",
     "license": "MIT",
     "repository": {
         "type": "git",

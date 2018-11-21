@@ -1,18 +1,15 @@
 import * as colors from 'colors/safe'
 
 function colored(str: string) {
+	/* istanbul ignore next */
 	if (!str || str.length < 2) return ''
 	return colors.red(str)
 }
 
 function bold(str: string) {
+	/* istanbul ignore next */
 	if (!str || str.length < 2) return ''
 	return colors.bold(str)
-}
-
-function black(str: string) {
-	if (!str || str.length < 2) return ''
-	return colors.black(str)
 }
 
 function hr() {
@@ -20,13 +17,9 @@ function hr() {
 }
 
 function h1(str: string) {
+	/* istanbul ignore next */
 	if (!str || str.length < 2) return ''
 	return hr() + '\n' + colored(bold(str))
-}
-
-function h2(str: string) {
-	if (!str || str.length < 2) return ''
-	return hr() + '\n' + black(str)
 }
 
 export function logUnexpectedError(err: Error) {
