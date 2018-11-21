@@ -24,10 +24,11 @@ describe('apolloError', () => {
 				extensions: {
 					exception: {
 						status: 200,
-						message: 'dsdfdsf'
+						debugMessage: 'dsdfdsf'
 					}
 				}
 			})
+		console.log(r)
 		expect(r.status).toBe(200)
 		expect(r.message).toBe('dsdfdsf')
 	})

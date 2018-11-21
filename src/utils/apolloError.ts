@@ -15,7 +15,7 @@ export function apolloError() {
 			logApplicationError(err)
 			return {
 				status: err.status,
-				message: err.message
+				message: err.debugMessage
 			}
 			// Otherwise it is an untrapped error
 		} else if (err) {
