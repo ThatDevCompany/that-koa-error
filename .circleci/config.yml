@@ -48,9 +48,9 @@ jobs:
 workflows:
   version: 2
   #----------------
-  # WORKFLOW - FULL DEPLOY
+  # WORKFLOW - CI
   #----------------
-  full_deploy:
+  ci:
     jobs:
       - checkout:
           filters:
