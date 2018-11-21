@@ -21,7 +21,7 @@ jobs:
           command: yarn install
 
       - save_cache:
-          key: cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "server/package.json" }}
+          key: cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "package.json" }}
           paths: node_modules
 
   #----------------
