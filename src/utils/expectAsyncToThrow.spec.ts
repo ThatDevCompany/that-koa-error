@@ -19,5 +19,4 @@ describe('expectAsyncToThrow', () => {
 			throw new Error('')
 		})
 	})
-
 })

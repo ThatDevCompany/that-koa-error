@@ -17,14 +17,14 @@ export function apolloError() {
 				status: err.status,
 				message: err.message
 			}
-		// Otherwise it is an untrapped error
+			// Otherwise it is an untrapped error
 		} else if (err) {
 			logUnexpectedError(err)
 			return {
 				status: 500,
 				message: err.message
 			}
-		// Null safety
+			// Null safety
 		} else {
 			logUnexpectedError(new Error('Unknown Error'))
 			return {

@@ -2,7 +2,7 @@ import { apolloError } from './apolloError'
 
 describe('apolloError', () => {
 	it('should be a factory', async () => {
-		expect( typeof apolloError()).toBe('function')
+		expect(typeof apolloError()).toBe('function')
 	})
 
 	it('should return 500 if null provided', async () => {
