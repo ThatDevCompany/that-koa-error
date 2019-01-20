@@ -1,14 +1,13 @@
 import { ApplicationError } from './application.error'
-import * as assert from 'assert'
 
 /**
  * A General Error
  */
 export class GeneralError extends ApplicationError {
 	constructor(
-		public debugMessage: string = 'No debug information provided',
-		public debugInfo: any = {}
+		generalErrorMessage: string = 'No debug information provided',
+		generalErrorInfo: any = {}
 	) {
-		super(500, 'A General Error has occurred', debugMessage, debugInfo)
+		super(500, 'General Error - ' + generalErrorMessage, '', generalErrorInfo)
 	}
 }

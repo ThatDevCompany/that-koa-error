@@ -28,7 +28,6 @@ describe('apolloError', () => {
 					}
 				}
 			})
-		console.log(r)
 		expect(r.status).toBe(200)
 		expect(r.message).toBe('dsdfdsf')
 	})

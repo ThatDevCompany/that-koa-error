@@ -1,12 +1,15 @@
 /**
  * An assert function for testing Async functions which throw errors
  */
-export async function expectAsyncToThrow(fnc) {
-	let errorCaught = false
+export async function expectAsyncToThrow(fnc, cb?: (err: Error) => any) {
+	let caughtError: Error = null
 	try {
 		await fnc()
 	} catch (err) {
-		errorCaught = true
+		caughtError = err
 	}
-	expect(errorCaught).toBeTruthy()
+	expect(caughtError).toBeDefined()
+	if (cb) {
+		cb(caughtError)
+	}
 }
