@@ -5,9 +5,9 @@ import { ApplicationError } from './application.error'
  */
 export class GeneralError extends ApplicationError {
 	constructor(
-		generalErrorMessage: string = 'No debug information provided',
+		generalErrorMessage: string = 'A General Error has occurred',
 		generalErrorInfo: any = {}
 	) {
-		super(500, 'General Error - ' + generalErrorMessage, '', generalErrorInfo)
+		super(500, generalErrorMessage, '', generalErrorInfo)
 	}
 }
